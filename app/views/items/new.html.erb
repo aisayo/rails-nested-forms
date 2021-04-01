@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<h3> Create an Item: </h3>
+<%= form_with model: @item do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :count %>
+    <%= f.number_field :count %>
+    <br>
+    <br>
+    <h2>Create a store:</h2>
+
+    <%= f.collection_select(:store_id, Store.all, :id, :name, prompt: true )%>
+    <%= f.fields_for :store do |s| %>
+        <%= s.label :name %>
+        <%= s.text_field :name %>
+    <% end %>
+
+    <%= f.submit "Create Item" %>
+
+<% end %>

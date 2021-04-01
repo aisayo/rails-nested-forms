@@ -1,0 +1,15 @@
+<br>
+<br>
+<br>
+<% if @stores.empty? %>
+    <h1>Currently 0 stores available</h1>
+<% else %>
+    <h2>All Stores:</h2>
+    <% @stores.each do |store| %>
+    <p>
+        Store Name: <%= link_to store.name, store_path(store) %>
+        <br>
+    </p>
+    <% end %>
+<% end %>
+

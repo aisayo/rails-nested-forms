@@ -1,0 +1,20 @@
+<h3> Create an Store: </h3>
+<%= form_with model: @store do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <h2>Create items:</h2>
+
+    <%= f.fields_for :items do |s| %>
+        <%= s.label :name %>
+        <%= s.text_field :name %>
+        <%= s.label :count %>
+        <%= s.text_field :count %>
+        <br>
+    <% end %>
+   
+
+    <%= f.submit "Create Item" %>
+
+<% end %>
